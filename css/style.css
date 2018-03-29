@@ -1,0 +1,497 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?73j3px');
+  src:  url('../fonts/icomoon.eot?73j3px#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?73j3px') format('truetype'),
+    url('../fonts/icomoon.woff?73j3px') format('woff'),
+    url('../fonts/icomoon.svg?73j3px#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-search:before {
+  content: "\e986";
+}
+.icon-menu:before {
+  content: "\e9bd";
+}
+/*-----------------------------------------------------------------------------------*/
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  border: 1px solid black;
+}
+
+.contenedor {
+  max-width: auto;
+  display: grid;
+  grid-template: 105px 1fr / 1fr;
+  grid-gap: 10px;
+  height: 100vh;
+  grid-template-areas: " header"
+                       " content";
+  grid-gap: 10px;
+}
+
+/*Header*/
+.header {
+  grid-area: header;
+  display: grid;
+  grid-template: 1fr 1fr / 100px 1fr 100px;
+  grid-template-areas: "banner   banner         banner"
+                       "burguer  nav-principal  search";
+  justify-items: center;
+  align-items: center;
+  box-shadow: 2px 2px 2px grey;
+}
+
+.banner {
+  grid-area: banner;
+}
+
+.burguer {
+  grid-area: burguer;
+}
+
+.burguer a {
+  text-decoration: none;
+  font-size: 22px;
+  color: grey;
+}
+
+.nav-principal {
+  grid-area: nav-principal;
+}
+
+.nav-principal img {
+  display: none;
+}
+
+.nav-principal nav ul {
+  padding: 0;
+}
+
+.nav-principal nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.nav-principal nav ul li a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 18px;
+}
+
+.nav-principal nav ul li a:hover {
+  color: grey;
+}
+
+.search {
+  grid-area: search;
+}
+
+.search a {
+  text-decoration: none;
+  font-size: 22px;
+  color: grey;
+}
+/*Header*/
+
+.nav-lateral {
+  position: absolute;
+  top: 120px;
+  float: left;
+  width: 300px;
+  margin-left: -1000px;
+}
+
+.nav-lateral nav ul li {
+  list-style: none;
+}
+
+.nav-lateral nav ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*Content*/
+.content {
+  float: left;
+  grid-area: content;
+  display: grid;
+  grid-template: 200px 1fr 200px / 1200px;
+  grid-template-areas: "portada"
+                       "article"
+                       "footer";
+  justify-content: center;
+  align-content: center;
+  grid-gap: 10px;
+  padding: 0 16px;
+  position: relative;
+  right: 10px;
+}
+
+/*portada*/
+.portada {
+  grid-area: portada;
+  display: grid;
+  grid-template: 80px 50px 58px / 1fr;
+  grid-template-areas: "blb"
+                       "fechaymenu2"
+                       "menu3";
+                       justify-content: center;
+                       align-content: center;
+}
+
+.blb {
+  grid-area: blb;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-areas: "bleft lcentro bright"
+}
+.bleft {
+  grid-area: bleft;
+}
+
+.lcentro {
+  grid-area: lcentro;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.lcentro img {
+  height: 60px;
+}
+
+.bright {
+  grid-area: bright;
+}
+
+.bright img {
+  float: right;
+}
+
+.fechaymenu2 {
+  grid-area: fechaymenu2;
+  border-bottom: 2px solid black;
+}
+
+.fechaymenu2 p {
+  float: left;
+  color: grey;
+  position: relative;
+  left: 250px;
+}
+
+.fechaymenu2 nav {
+  float: left;
+  position: relative;
+  left: 250px;
+}
+
+.fechaymenu2 nav ul {
+  padding-left: 15px;
+}
+
+.fechaymenu2 nav ul li {
+  display: inline;
+}
+
+.fechaymenu2 nav ul li a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+
+.menu3 {
+  grid-area: menu3;
+  box-shadow: 2px 1px 2px grey;
+  border-right: 0;
+}
+
+.menu3 nav ul {
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.menu3 nav ul li {
+  display: inline;
+  padding: 0 15px;
+}
+
+.menu3 nav ul li:first-child {
+  padding-left: 0;
+}
+
+.menu3 nav ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+/*portada*/
+
+/*article*/
+.article {
+  grid-area: article;
+  display: grid;
+  grid-template: 90px 335px 335px / 1fr 389px ;
+  grid-template-areas: "banner2 banner2"
+                       "not1    not2"
+                       "not1    not3";
+  justify-content: center;
+  align-content: center;
+ grid-gap: 10px;
+}
+
+.banner2 {
+  grid-area: banner2;
+}
+
+.not1 {
+  grid-area: not1;
+  border-bottom: 1px solid grey;
+  display: grid;
+  grid-template: 1fr 1fr 1fr / 1fr;
+  grid-template-areas: "titulo"
+                       "subtitulo"
+                       "foto";
+
+}
+
+.titulo {
+  grid-area: titulo;
+}
+
+.subtitulo {
+  grid-area: subtitulo;
+}
+
+.subtitulo p {
+  font-family: Arial;
+  font-size: 16px;
+}
+
+.foto {
+  grid-area: foto;
+}
+
+.not2 {
+  grid-area: not2;
+  border-bottom: 1px solid grey;
+}
+
+.not3 {
+  grid-area: not3;
+  border-bottom: 1px solid grey;
+}
+/*article*/
+
+
+
+/*footer*/
+.footer {
+  grid-area: footer;
+}
+/*footer*/
+/*Content*/
+/***********************************************************************************/
+/*Ipad*/
+@media screen and (max-width: 768px) {
+
+
+  .header {
+    grid-area: header;
+    display: grid;
+    grid-template: 1fr / 100px 1fr 100px;
+    grid-template-areas: "burguer  nav-principal  search";
+    box-shadow: 2px 2px 2px grey;
+  }
+
+  .banner {
+    display: none;
+  }
+
+  .burguer {
+    grid-area: burguer;
+    margin-top: 10px;
+  }
+
+  .nav-principal {
+    grid-area: nav-principal;
+    margin-top: 10px;
+  }
+
+  .nav-principal img {
+    display: block;
+    width: 100%;
+    height: 25px;
+    margin-left: 0;
+  }
+
+  .nav-principal nav {
+    display: none;
+  }
+
+  .search {
+    grid-area: search;
+    margin-top: 15px;
+  }
+
+  /*Content*/
+  .content {
+    grid-area: content;
+    display: grid;
+    grid-template: 115px 1fr 1fr / 1fr;
+    grid-template-areas: "portada"
+                         "article"
+                         "footer";
+    justify-content: center;
+    align-content: center;
+  }
+
+  /*Content*/
+
+  .portada {
+    grid-area: portada;
+    display: grid;
+    grid-template: 80px 35px/ 1fr;
+    grid-template-areas: "blb"
+                         "fechaymenu2";
+  }
+
+  .fechaymenu2 p {
+    margin: 0 0 0 10px;
+    position: relative;
+    left: 40px
+  }
+
+  .fechaymenu2 nav {
+    font-size: 14px;
+    position: relative;
+    bottom: 12px;
+    left: 35px;
+  }
+
+  .menu3 {
+    display: none;
+  }
+
+  .lcentro img {
+    height: 56px;
+  }
+
+  /*article*/
+  .article {
+    grid-area: article;
+  }
+
+
+  /*footer*/
+  .footer {
+    grid-area: footer;
+  }
+  /*footer*/
+}
+/**********************************************************************************/
+/*Movil*/
+@media screen and (max-width: 414px) {
+
+  .header {
+    grid-area: header;
+    display: grid;
+    grid-template: 1fr / 100px 1fr 100px;
+    grid-template-areas: "burguer nav-principal  search";
+  }
+
+  .banner {
+    display: none;
+  }
+
+  .burguer {
+    grid-area: burguer;
+  }
+
+  .nav-principal {
+    grid-area: nav-principal;
+  }
+
+  .nav-principal nav {
+    display: none;
+  }
+
+  .search {
+    grid-area: search;
+  }
+
+  /*Content*/
+  .content {
+    grid-area: content;
+    display: grid;
+    grid-template: 1fr 1fr / 1fr;
+    grid-template-areas: "article"
+                         "footer";
+    justify-content: center;
+    align-content: center;
+  }
+/*Content*/
+
+  .portada {
+    display: none;
+  }
+
+  /*article*/
+  .article {
+    grid-area: article;
+    display: grid;
+    grid-template: 70px repeat(3, 1fr) / 1fr ;
+    grid-template-areas: "banner2"
+                         "not1"
+                         "not2"
+                         "not3";
+    justify-content: center;
+    align-content: center;
+  }
+
+  .banner2 {
+    grid-area: banner2;
+  }
+
+  .not1 {
+    grid-area: not1;
+  }
+
+  .not2 {
+    grid-area: not2;
+  }
+
+  .not3 {
+    grid-area: not3;
+  }
+  /*article*/
+
+
+  /*footer*/
+  .footer {
+    grid-area: footer;
+  }
+  /*footer*/
+}
