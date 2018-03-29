@@ -123,7 +123,7 @@ body {
   float: left;
   grid-area: content;
   display: grid;
-  grid-template: 200px 1fr 200px / 1200px;
+  grid-template: 200px 1fr auto / 1200px;
   grid-template-areas: "portada"
                        "article"
                        "footer";
@@ -280,13 +280,13 @@ body {
 .article {
   grid-area: article;
   display: grid;
-  grid-template: 90px 335px 335px / 1fr 389px ;
+  grid-template: 90px 1fr 1fr / 1fr 389px ;
   grid-template-areas: "banner2 banner2"
                        "not1    not2"
                        "not1    not3";
   justify-content: center;
   align-content: center;
- grid-gap: 10px;
+  grid-gap: 10px;
 }
 
 .banner2 {
@@ -298,7 +298,7 @@ body {
   grid-area: not1;
   border-bottom: 1px solid grey;
   display: grid;
-  grid-template: 1fr 1fr 1fr / 1fr;
+  grid-template: auto auto auto / 1fr;
   grid-template-areas: "titulo"
                        "subtitulo"
                        "foto";
@@ -326,17 +326,75 @@ body {
 .not2 {
   grid-area: not2;
   border-bottom: 1px solid grey;
+  display: grid;
+  grid-template: auto auto / 1fr;
+  grid-template-areas: "titulo2"
+                       "foto2";
 }
+
+.titulo2 {
+  grid-area: titulo2;
+}
+
+.foto2 {
+  grid-area: foto2;
+}
+
 
 .not3 {
   grid-area: not3;
   border-bottom: 1px solid grey;
+  display: grid;
+  grid-template: auto auto / 1fr;
+  grid-template-areas: "titulo2"
+                       "foto2";
 }
 /* end article*/
 
 /*footer*/
 .footer {
   grid-area: footer;
+  display: grid;
+  grid-template: 62px 1fr / repeat(4, 1fr);
+  grid-template-areas: "foot-sup  foot-sup  foot-sup  foot-sup"
+                       "foot-inf1 foot-inf2 foot-inf3 foot-inf4";
+}
+
+.footer ul li {
+  list-style: none;
+  margin: 3px 0;
+}
+
+.footer ul li:first-child {
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.footer ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.foot-sup {
+  grid-area: foot-sup;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+
+.foot-inf1{
+  grid-area: foot-inf1;
+}
+
+.foot-inf2 {
+  grid-area: foot-inf2;
+}
+
+.foot-inf3 {
+  grid-area: foot-inf3;
+}
+
+.foot-inf4 {
+  grid-area: foot-inf4;
 }
 /*end footer*/
 
@@ -344,7 +402,6 @@ body {
 /***********************************************************************************/
 /*Ipad*/
 @media screen and (max-width: 768px) {
-
 
   .header {
     grid-area: header;
@@ -383,12 +440,13 @@ body {
     grid-area: search;
     margin-top: 15px;
   }
+  /*header*/
 
   /*Content*/
   .content {
     grid-area: content;
     display: grid;
-    grid-template: 115px 1fr 1fr / 1fr;
+    grid-template: 115px auto auto / 1fr;
     grid-template-areas: "portada"
                          "article"
                          "footer";
@@ -406,6 +464,7 @@ body {
     right: 1600px;
     bottom: 0;
     transition: .3s;
+    height: 900px;
   }
 
   .nav-lateral.active {
@@ -506,6 +565,12 @@ body {
                          "footer";
     justify-content: center;
     align-content: center;
+    position: relative;
+    left: 0;
+  }
+
+  .nav-lateral {
+    border: 0;
   }
 
   .nav-lateral.active {
@@ -522,7 +587,7 @@ body {
   .article {
     grid-area: article;
     display: grid;
-    grid-template: 70px repeat(3, 1fr) / 1fr ;
+    grid-template: 70px auto auto auto / 1fr ;
     grid-template-areas: "banner2"
                          "not1"
                          "not2"
@@ -539,6 +604,18 @@ body {
     grid-area: not1;
   }
 
+  .not1 .titulo {
+    font-size: 10px;
+  }
+
+  .not2 .titulo2 {
+    font-size: 10px;
+  }
+
+  .not1 .subtitulo p {
+    font-size: 15px;
+  }
+
   .not2 {
     grid-area: not2;
   }
@@ -552,6 +629,13 @@ body {
   /*footer*/
   .footer {
     grid-area: footer;
+    display: grid;
+    grid-template: 62px 1fr / 1fr;
+    grid-template-areas: "foot-sup"
+                         "foot-inf1"
+                         "foot-inf2"
+                         "foot-inf3"
+                         "foot-inf4";
   }
   /*footer*/
 }
