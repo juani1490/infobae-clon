@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('../fonts/icomoon.eot?73j3px');
-  src:  url('../fonts/icomoon.eot?73j3px#iefix') format('embedded-opentype'),
-    url('../fonts/icomoon.ttf?73j3px') format('truetype'),
-    url('../fonts/icomoon.woff?73j3px') format('woff'),
-    url('../fonts/icomoon.svg?73j3px#icomoon') format('svg');
+  src:  url('../fonts/icomoon.eot?ei9ejj');
+  src:  url('../fonts/icomoon.eot?ei9ejj#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?ei9ejj') format('truetype'),
+    url('../fonts/icomoon.woff?ei9ejj') format('woff'),
+    url('../fonts/icomoon.svg?ei9ejj#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -30,8 +30,10 @@
 .icon-menu:before {
   content: "\e9bd";
 }
+.icon-menu.icon-cancel:before {
+  content: "\ea0f";
+}
 /*-----------------------------------------------------------------------------------*/
-
 
 body {
   margin: 0;
@@ -50,9 +52,8 @@ body {
   height: 100vh;
   grid-template-areas: " header"
                        " content";
-  grid-gap: 10px;
+  grid-gap: 0;
 }
-
 /*Header*/
 .header {
   grid-area: header;
@@ -115,7 +116,7 @@ body {
   font-size: 22px;
   color: grey;
 }
-/*Header*/
+/* end Header*/
 
 /*Content*/
 .content {
@@ -129,11 +130,12 @@ body {
   justify-content: center;
   align-content: center;
   grid-gap: 10px;
-  padding: 0 16px;
+  padding: 0 26px;
   position: relative;
   right: 10px;
 }
 
+/*nav-lateral*/
 .nav-lateral {
   background-color: rgba(255,255,255,0.95);
   position: absolute;
@@ -142,23 +144,39 @@ body {
   left: -100%;
   width: 100%;
   right: 1600px;
-  bottom: 0;
+  height: 829px;
   transition: .3s;
+  font-size: 20px;
+  overflow: scroll;
 }
 
 .nav-lateral.active {
   left: 0;
-  width: 250px;
+  width: 255px;
 }
 
 .nav-lateral nav ul li {
   list-style: none;
+  width: 200px;
+  line-height: 40px;
 }
 
 .nav-lateral nav ul li a {
   text-decoration: none;
   color: inherit;
 }
+
+.nav-lateral nav ul li a:hover {
+  color: grey;
+}
+
+.nav-lateral nav ul li:first-child a {
+  color: orange;
+  border-left: 2px solid orange;
+  padding-left: 10px;
+}
+
+/* end nav-lateral*/
 
 /*portada*/
 .portada {
@@ -256,7 +274,7 @@ body {
   text-decoration: none;
   color: inherit;
 }
-/*portada*/
+/* end portada*/
 
 /*article*/
 .article {
@@ -275,6 +293,7 @@ body {
   grid-area: banner2;
 }
 
+/*not1*/
 .not1 {
   grid-area: not1;
   border-bottom: 1px solid grey;
@@ -302,6 +321,7 @@ body {
 .foto {
   grid-area: foto;
 }
+/* end not1*/
 
 .not2 {
   grid-area: not2;
@@ -312,16 +332,15 @@ body {
   grid-area: not3;
   border-bottom: 1px solid grey;
 }
-/*article*/
-
-
+/* end article*/
 
 /*footer*/
 .footer {
   grid-area: footer;
 }
-/*footer*/
-/*Content*/
+/*end footer*/
+
+/* end Content*/
 /***********************************************************************************/
 /*Ipad*/
 @media screen and (max-width: 768px) {
@@ -444,20 +463,28 @@ body {
   .header {
     grid-area: header;
     display: grid;
-    grid-template: 1fr / 100px 1fr 100px;
-    grid-template-areas: "burguer nav-principal  search";
+    grid-template: 1fr 1fr / 100px 1fr 100px;
+    grid-template-areas:  "banner  banner         banner"
+                          "burguer nav-principal  search";
   }
 
   .banner {
-    display: none;
+    grid-area: banner;
+    display:  block;
   }
 
   .burguer {
     grid-area: burguer;
+    padding-right: 40px;
+    margin-top: 0;
   }
 
   .nav-principal {
     grid-area: nav-principal;
+  }
+
+  .nav-principal img {
+    margin-bottom: 10px;
   }
 
   .nav-principal nav {
@@ -466,6 +493,8 @@ body {
 
   .search {
     grid-area: search;
+    padding-left: 40px;
+    margin-top: 0;
   }
 
   /*Content*/
