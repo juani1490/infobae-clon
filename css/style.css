@@ -35,8 +35,8 @@
 }
 /*-----------------------------------------------------------------------------------*/
 body {
-  margin: 0;
-  padding: 0;
+  width: 100%;
+  margin:auto;
 }
 
 .item {
@@ -49,7 +49,7 @@ body {
   display: grid;
   -ms-grid-rows: 105px 1fr;
   -ms-grid-columns: 1fr;
-  grid-template: 105px 1fr / 1fr;
+  grid-template: 105px 1fr / 100%;
   grid-gap: 10px;
   height: 100vh;
   grid-template-areas: " header"
@@ -242,6 +242,8 @@ body {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: bleft;
+  justify-items: center;
+  align-items: center;
 }
 
 .lcentro {
@@ -507,6 +509,33 @@ body {
 }
 /*end Content-footer*/
 /*end Contenedor-Content*/
+
+@media screen and (max-width: 1274px) {
+  .content {
+    float: left;
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: content;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 200px 1fr auto;
+    -ms-grid-columns: 1200px;
+    grid-template: 200px 1fr auto / 1fr;
+    grid-template-areas: "portada"
+                         "article"
+                         "footer";
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    grid-gap: 10px;
+    padding: 0 26px;
+    position: relative;
+    right: 10px;
+  }
+
+}
 
 /***********************************************************************************/
 /*Ipad*/
