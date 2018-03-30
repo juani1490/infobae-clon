@@ -242,8 +242,8 @@ body {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: bleft;
-  justify-items: center;
-  align-items: center;
+  justify-self: center;
+  align-self: center;
 }
 
 .lcentro {
@@ -262,6 +262,8 @@ body {
   -ms-grid-row: 1;
   -ms-grid-column: 3;
   grid-area: bright;
+  justify-self: center;
+  align-self: center;
 }
 
 .bright img {
@@ -358,6 +360,8 @@ body {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: banner2;
+  justify-self: center;
+  align-self: center;
 }
 
 /*Article-not1*/
@@ -482,6 +486,7 @@ body {
   grid-area: foot-sup;
   border-top: 1px solid grey;
   border-bottom: 1px solid grey;
+
 }
 
 .foot-inf1{
@@ -509,6 +514,12 @@ body {
 }
 /*end Content-footer*/
 /*end Contenedor-Content*/
+
+@media screen and (max-width: 1092px) {
+  .nav-principal {
+    display: none;
+  }
+}
 
 @media screen and (max-width: 1274px) {
   .content {
